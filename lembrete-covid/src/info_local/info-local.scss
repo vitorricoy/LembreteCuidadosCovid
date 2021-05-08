@@ -1,0 +1,17 @@
+@import "~react-md/dist/scss/react-md";
+@include react-md-utils;
+
+.cartao {
+  width: 90vw;
+  margin-top: 5vh;
+}
+
+.cabecalho {
+  padding: 8px 16px 8px 16px;
+}
+
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

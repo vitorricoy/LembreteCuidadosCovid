@@ -8,8 +8,16 @@
   color: white;
 }
 
-.Local {
+.centro {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.botao-notificacao {
+  margin: 15px 15px 15px 15px;
+}
+
+.branco {
+  background-color: white;
 }

@@ -1,0 +1,3 @@
+{"usuario":123,"distancia":10,"_id":"tW2jBaMY4fdhYJwr"}
+{"$$indexCreated":{"fieldName":"usuario","unique":true,"sparse":false}}
+{"usuario":123,"distancia":15,"_id":"tW2jBaMY4fdhYJwr"}
