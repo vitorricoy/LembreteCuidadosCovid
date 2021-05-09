@@ -31,4 +31,4 @@ app.listen(process.env.PORT, function () {
   console.log('Example app listening on port 8000!');
 });
 
-setInterval(() => userService.enviarPush(), 1000);
+setInterval(() => userService.enviarPush(), 60000);
