@@ -1,7 +1,17 @@
+require('dotenv').config()
 var express = require('express');
 var userService = require('./services/user_service.js');
 
 var app = express();
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 app.use(express.json());
 
 app.post('/', function (req, res) {
@@ -25,3 +35,5 @@ app.get('/', function(req, res) {
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
+
+setInterval(() => userService.enviarPush(), 1000);

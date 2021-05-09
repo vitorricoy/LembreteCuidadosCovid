@@ -1,16 +1,16 @@
 import firebase from 'firebase/app';
 import '@firebase/messaging';
-const { PROJECT_ID, AUTH_DOMAIN, API_KEY, STORAGE_BUCKET, APP_ID, MEASUREMENT_ID } = process.env;
+const { REACT_APP_PROJECT_ID, REACT_APP_AUTH_DOMAIN, REACT_APP_API_KEY, REACT_APP_STORAGE_BUCKET, REACT_APP_APP_ID, REACT_APP_MEASUREMENT_ID } = process.env;
 
 export const inicializarFirebase = () => {
     firebase.initializeApp({
-      apiKey: API_KEY,
-      authDomain: AUTH_DOMAIN,
-      projectId: PROJECT_ID,
-      storageBucket: STORAGE_BUCKET,
+      apiKey: REACT_APP_API_KEY,
+      authDomain: REACT_APP_AUTH_DOMAIN,
+      projectId: REACT_APP_PROJECT_ID,
+      storageBucket: REACT_APP_STORAGE_BUCKET,
       messagingSenderId: "837796714319",
-      appId: APP_ID,
-      measurementId: MEASUREMENT_ID
+      appId: REACT_APP_APP_ID,
+      measurementId: REACT_APP_MEASUREMENT_ID
     });
 }
 

@@ -1,10 +1,10 @@
-const { API_URL } = process.env;
+const { REACT_APP_API_URL } = process.env;
 
 class UpdateDistanceService {
     updateDistance(novaDistancia: Number) {
         if(window.localStorage.getItem("token_message") !== null) {
             let usuario = window.localStorage.getItem("token_message");
-            fetch(API_URL!, {
+            fetch(REACT_APP_API_URL!, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

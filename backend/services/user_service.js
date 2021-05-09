@@ -1,4 +1,6 @@
 var db = require('../agents/db_agent.js');
+var firebase = require('../agents/firebase_agent.js');
+
 function atualizaDistancia(distancia, usuario) {
     let promise = new Promise(function(resolve, reject) {
         db.usuarioNoBanco(usuario).then((result) => {
@@ -33,4 +35,17 @@ function listarUsuarios() {
     return promise;
 }
 
-module.exports = { atualizaDistancia, listarUsuarios };
+function enviarPush() {
+    listarUsuarios().then((result)=> {
+        for(usuarios of result.data.dados) {
+            if(usuarios.distancia !== 0) {
+                firebase.enviarNotificacao(usuarios.usuario, usuarios.distancia);
+                console.log("enviou notificacao para usuario: " + usuarios.usuario);
+            }
+        }
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+module.exports = { atualizaDistancia, listarUsuarios, enviarPush};
