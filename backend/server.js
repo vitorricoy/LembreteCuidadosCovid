@@ -23,14 +23,14 @@ app.post('/', function (req, res) {
     });
 });
 
-app.get('/', function(req, res) {
-    userService.listarUsuarios().then((result) => {
-        res.json({'dados': result.data.dados});
-    }).catch((error) => {
-        console.log(error);
-        res.sendStatus(500);
-    });
-});
+// app.get('/', function(req, res) {
+//     userService.listarUsuarios().then((result) => {
+//         res.json({'dados': result.data.dados});
+//     }).catch((error) => {
+//         console.log(error);
+//         res.sendStatus(500);
+//     });
+// });
 
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
