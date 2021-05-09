@@ -48,13 +48,14 @@ class InfoLocal extends React.Component<{}, InfoLocalState> {
             });
         });
     }
-
+    
     componentWillMount() {
         this.tick();
     }
-
+    
     componentDidMount() {
         setInterval(() => this.tick(), 2000);
+        document.title = 'Lembrete Covid';
     }
 
     salvarCasa() {
