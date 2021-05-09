@@ -38,7 +38,7 @@ function listarUsuarios() {
 function enviarPush() {
     listarUsuarios().then((result)=> {
         for(usuarios of result.data.dados) {
-            if(usuarios.distancia !== 0) {
+            if(usuarios.distancia !== -1) {
                 firebase.enviarNotificacao(usuarios.usuario, usuarios.distancia);
                 console.log("enviou notificacao para usuario: " + usuarios.usuario);
             }
