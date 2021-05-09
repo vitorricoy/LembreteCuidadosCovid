@@ -1,16 +1,11 @@
 require('dotenv').config()
 var express = require('express');
+var cors = require('cors');
 var userService = require('./services/user_service.js');
 
 var app = express();
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
+app.use(cors());
 
 app.use(express.json());
 
