@@ -12,7 +12,7 @@ function enviarNotificacao(usuario, distancia) {
     });
     
     const options = {
-        hostname: process.env.URL_PUSH,
+        hostname: "https://"+process.env.URL_PUSH,
         path: process.env.PATH_PUSH,
         method: 'POST',
         headers: {
