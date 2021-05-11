@@ -27,8 +27,12 @@ app.post('/', function (req, res) {
 //     });
 // });
 
+app.post('/force', function (req, res) {
+    userService.enviarPush()
+});
+
 app.listen(process.env.PORT, function () {
-  console.log('Example app listening on port 8000!');
+  console.log('App listening on port 8000!');
 });
 
 setInterval(() => userService.enviarPush(), 60000);
